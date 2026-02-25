@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todolist/widgets/todo_list.dart';
 
 class HomeScreen extends StatelessWidget{
 
@@ -12,6 +13,7 @@ class HomeScreen extends StatelessWidget{
       appBar: AppBar(
         backgroundColor: Colors.black,
       ),
+      body:TodoList()
     );
   }
 }
