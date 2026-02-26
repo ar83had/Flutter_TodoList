@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
@@ -35,6 +36,7 @@ class DBHelper{
 
     Directory appDir = await getApplicationDocumentsDirectory();
     String dbPath = join(appDir.path, "noteDB.db");
+    debugPrint("Db Path is : $dbPath");
 
     return await openDatabase(dbPath,onCreate: (db,version){
       db.execute("create table $TABLE_NOTES ($COLUMN_NOTES_SNO integer primary key autoincrement, $COLUMN_NOTES_TITLE text, $COLUMN_NOTES_DESC text)");
